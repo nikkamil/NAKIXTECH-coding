@@ -13,7 +13,7 @@ create table public.experiments (
 );
 create function public.is_smartlab_admin() returns boolean
 language sql stable security invoker set search_path = '' as $$
-  select coalesce((select auth.uid()) = '00000000-0000-0000-0000-000000000000'::uuid, false);
+  select coalesce((select auth.uid()) = 'e4603419-deba-45ed-8df9-d93304393ddf'::uuid, false);
 $$;
 revoke all on function public.is_smartlab_admin() from public;
 grant execute on function public.is_smartlab_admin() to authenticated;
